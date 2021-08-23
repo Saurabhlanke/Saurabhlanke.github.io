@@ -2,15 +2,15 @@
 <body>
 
 <h1>Trial 015</h1>
-<button onclick="myFunction()">Click me</button>Click me</button>
+<button style="font-size:50px;" onclick="myFunction()">React Native data pass</button>
 <p id="demo"></p>
 
 <script>
 function myFunction() {
  if (window.ReactNativeWebView) {
         let message = {
-          action: "toast-notification",
-          message: "setUserFromMe",
+          action: "23",
+          message: "data sent",
         };
         window.ReactNativeWebView.postMessage(JSON.stringify(message));
       }
