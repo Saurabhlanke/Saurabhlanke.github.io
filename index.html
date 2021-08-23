@@ -1,19 +1,18 @@
 <html>
 <body>
 
-<h1>Trial 013</h1>
-<button onClick={() => {
-  if(window.ReactNativeWebView) { // ensure window.ReactNativeWebView is there, otherwise, web app might crash if is not there
-    window.ReactNativeWebView.postMessage('Wayne is coming again')
-  console.log("Sending data from WebView")
-  }
-}}>Click me</button>
+<h1>Trial 014</h1>
+<button onclick="myFunction()">Click me</button>Click me</button>
 <p id="demo"></p>
 
 <script>
 function myFunction() {
-  window.postMessage("Sending data from WebView");
-  console.log("Sending data from WebView")
+  if(window.ReactNativeWebView) { // ensure window.ReactNativeWebView is there, otherwise, web app might crash if is not there
+    window.ReactNativeWebView.postMessage('Wayne is coming again')
+     console.log("Sending data from WebView")
+  }
+  
+ 
 }
 </script>
 
