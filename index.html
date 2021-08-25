@@ -48,11 +48,13 @@ function myFunction() {
   
 
   <script>
-	window.addEventListener("message", message => {
+	
+ 	if (window.ReactNativeWebView) {
+        window.addEventListener("message", message => {
   console.log(message.data) // Wayne is coming!!!
   window.ReactNativeWebView.postMessage('Client received data')
 });
-
+      }
 	  if (window.ReactNativeWebView) {
         let message = {
           action: "23",
@@ -69,7 +71,7 @@ function myFunction() {
 		var data = [
   {
     id: "1",
-    name: "Trial 04",
+    name: "Trial 05",
     actualStart: "2018-01-15",
     actualEnd: "2018-03-10",
 	resource:"Saurabh",
