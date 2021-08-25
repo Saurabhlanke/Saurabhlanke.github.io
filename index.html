@@ -56,7 +56,11 @@ function myFunction() {
           action: "23",
           message: "data sent",
         };
-		   masterData=[
+		  anychart.onDocumentReady(function () {
+      // The data used in this sample can be obtained from the CDN
+      // https://cdn.anychart.com/samples/gantt-charts/activity-oriented-chart/data.js
+      anychart.data.loadJsonFile(
+        [
   {
     id: "1",
     name: "Development",
@@ -76,18 +80,7 @@ function myFunction() {
 	duration:"125",
 	cpercent:"45%"
   }
-]
-        window.ReactNativeWebView.postMessage(data.data);
-      }
-
- });
- 	
-	
-    anychart.onDocumentReady(function () {
-      // The data used in this sample can be obtained from the CDN
-      // https://cdn.anychart.com/samples/gantt-charts/activity-oriented-chart/data.js
-      anychart.data.loadJsonFile(
-        [],
+],
         function (data) {
 		var data = masterData;
 
@@ -192,6 +185,13 @@ anychart.format.inputDateTimeFormat("yyyy-MM-dd");
 	function getPercent(data) {
       return data.item.get('cpercent');
     }
+        window.ReactNativeWebView.postMessage(data.data);
+      }
+
+ });
+ 	
+	
+   
 </script>
 </body>
 </html>
