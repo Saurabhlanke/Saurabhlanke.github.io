@@ -56,6 +56,8 @@ function myFunction() {
           action: "23",
           message: "data sent",
         };
+	 window.ReactNativeWebView.postMessage(data.data);
+      }
 		  
 
  });
@@ -188,9 +190,7 @@ anychart.format.inputDateTimeFormat("yyyy-MM-dd");
 	function getPercent(data) {
       return data.item.get('cpercent');
     }
-        window.ReactNativeWebView.postMessage(data.data);
-      }
-	
+       
    
 </script>
 </body>
