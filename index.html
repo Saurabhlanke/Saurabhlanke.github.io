@@ -48,7 +48,9 @@ function myFunction() {
   
 
   <script>
-	
+	document.addEventListener("message", function(event) {
+ alert(event.data)
+}
  	if (window.ReactNativeWebView) {
         window.addEventListener("message", message => {
   myFunction()
