@@ -51,21 +51,7 @@ function myFunction() {
 	document.addEventListener("message", function(event) {
  alert(event.data)
 }
- 	if (window.ReactNativeWebView) {
-        window.addEventListener("message", message => {
-  myFunction()
-});
-      }
-	  function myFunction() {
- if (window.ReactNativeWebView) {
-        let message = {
-          action: "23",
-          message: "data sent",
-        };
-        window.ReactNativeWebView.postMessage('0010101010101010101010101010000000000000')
-      }
-
-}
+ 	
 	
     anychart.onDocumentReady(function () {
       // The data used in this sample can be obtained from the CDN
@@ -76,7 +62,7 @@ function myFunction() {
 		var data = [
   {
     id: "1",
-    name: "Trial 06",
+    name: "Trial 07",
     actualStart: "2018-01-15",
     actualEnd: "2018-03-10",
 	resource:"Saurabh",
