@@ -20,7 +20,7 @@ function myFunction() {
 
 </body>
 </html> -->
-                             <html>
+                                            <html>
 <head>
   <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
   <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
@@ -48,46 +48,15 @@ function myFunction() {
   
 
   <script>
-	 var masterData=[]
-  document.addEventListener("message", function(data) {
-                       //alert(data.data)
-	   if (window.ReactNativeWebView) {
-        let message = {
-          action: "23",
-          message: "data sent",
-        };
-	 window.ReactNativeWebView.postMessage(data.data);
-      }
-		  
 
- });
- 	anychart.onDocumentReady(function () {
+    anychart.onDocumentReady(function () {
       // The data used in this sample can be obtained from the CDN
       // https://cdn.anychart.com/samples/gantt-charts/activity-oriented-chart/data.js
       anychart.data.loadJsonFile(
-        [
-  {
-    id: "1",
-    name: "Development",
-    actualStart: "2018-01-15",
-    actualEnd: "2018-03-10",
-	resource:"Saurabh",
-	duration:"125",
-	cpercent:"45%"
-
-  },
-  {
-    id: "1",
-    name: "Development",
-    actualStart: "2018-01-13",
-    actualEnd: "2018-01-16",
-	resource:"Saurabh",
-	duration:"125",
-	cpercent:"45%"
-  }
-],
+        [],
         function (data) {
-		var data = masterData;
+		var data = 
+		;
 
 // set the input date/time format
 anychart.format.inputDateTimeFormat("yyyy-MM-dd");
@@ -175,7 +144,10 @@ anychart.format.inputDateTimeFormat("yyyy-MM-dd");
 
           // initiate chart drawing
           chart.draw();
-
+			chart.listen("rowClick", function (e) {
+  var itemName = e.item.get("name");
+  console.log(e.item,"row clicked")
+});
           // zoom chart to specified date
           
         }
@@ -190,9 +162,7 @@ anychart.format.inputDateTimeFormat("yyyy-MM-dd");
 	function getPercent(data) {
       return data.item.get('cpercent');
     }
-       
-   
 </script>
 </body>
 </html>
-                
+            
