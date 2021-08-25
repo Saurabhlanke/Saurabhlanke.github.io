@@ -51,17 +51,20 @@ function myFunction() {
 	
  	if (window.ReactNativeWebView) {
         window.addEventListener("message", message => {
-  console.log(message.data) // Wayne is coming!!!
-  window.ReactNativeWebView.postMessage('Client received data')
+  myFunction()
 });
       }
-	  if (window.ReactNativeWebView) {
+	  function myFunction() {
+ if (window.ReactNativeWebView) {
         let message = {
           action: "23",
           message: "data sent",
         };
         window.ReactNativeWebView.postMessage('0010101010101010101010101010000000000000')
       }
+
+}
+	
     anychart.onDocumentReady(function () {
       // The data used in this sample can be obtained from the CDN
       // https://cdn.anychart.com/samples/gantt-charts/activity-oriented-chart/data.js
