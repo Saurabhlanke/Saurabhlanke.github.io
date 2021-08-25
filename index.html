@@ -48,12 +48,9 @@ function myFunction() {
   
 
   <script>
-	document.addEventListener("message", message => {
+	window.addEventListener("message", message => {
   console.log(message.data) // Wayne is coming!!!
-		if (window.ReactNativeWebView) {
-        
-        window.ReactNativeWebView.postMessage(message.data);
-      }
+  window.ReactNativeWebView.postMessage('Client received data')
 });
 
     anychart.onDocumentReady(function () {
@@ -65,7 +62,7 @@ function myFunction() {
 		var data = [
   {
     id: "1",
-    name: "Trial 01",
+    name: "Trial 02",
     actualStart: "2018-01-15",
     actualEnd: "2018-03-10",
 	resource:"Saurabh",
