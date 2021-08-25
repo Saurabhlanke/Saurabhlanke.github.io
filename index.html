@@ -48,9 +48,9 @@ function myFunction() {
   
 
   <script>
-	window.addEventListener("message", function(event) {
- alert(event.data)
-})
+  document.addEventListener("message", function(data) {
+                       alert(data.data)
+ });
  	
 	
     anychart.onDocumentReady(function () {
