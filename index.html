@@ -48,13 +48,14 @@ function myFunction() {
   
 
   <script>
-	window.addEventListener("message", message => {
+	document.addEventListener("message", message => {
   console.log(message.data) // Wayne is coming!!!
 		if (window.ReactNativeWebView) {
         
         window.ReactNativeWebView.postMessage(message.data);
       }
 });
+
     anychart.onDocumentReady(function () {
       // The data used in this sample can be obtained from the CDN
       // https://cdn.anychart.com/samples/gantt-charts/activity-oriented-chart/data.js
