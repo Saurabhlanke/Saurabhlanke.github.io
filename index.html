@@ -56,7 +56,10 @@ function myFunction() {
           action: "23",
           message: "data sent",
         };
-		  anychart.onDocumentReady(function () {
+		  
+
+ });
+ 	anychart.onDocumentReady(function () {
       // The data used in this sample can be obtained from the CDN
       // https://cdn.anychart.com/samples/gantt-charts/activity-oriented-chart/data.js
       anychart.data.loadJsonFile(
@@ -187,9 +190,6 @@ anychart.format.inputDateTimeFormat("yyyy-MM-dd");
     }
         window.ReactNativeWebView.postMessage(data.data);
       }
-
- });
- 	
 	
    
 </script>
