@@ -48,6 +48,7 @@ function myFunction() {
   
 
   <script>
+	 var masterData=[]
   document.addEventListener("message", function(data) {
                        //alert(data.data)
 	   if (window.ReactNativeWebView) {
@@ -55,22 +56,10 @@ function myFunction() {
           action: "23",
           message: "data sent",
         };
-        window.ReactNativeWebView.postMessage(data.data);
-      }
-
- });
- 	
-	
-    anychart.onDocumentReady(function () {
-      // The data used in this sample can be obtained from the CDN
-      // https://cdn.anychart.com/samples/gantt-charts/activity-oriented-chart/data.js
-      anychart.data.loadJsonFile(
-        [],
-        function (data) {
-		var data = [
+		   masterData=[
   {
     id: "1",
-    name: "Trial 08",
+    name: "Development",
     actualStart: "2018-01-15",
     actualEnd: "2018-03-10",
 	resource:"Saurabh",
@@ -87,7 +76,20 @@ function myFunction() {
 	duration:"125",
 	cpercent:"45%"
   }
-];
+]
+        window.ReactNativeWebView.postMessage(data.data);
+      }
+
+ });
+ 	
+	
+    anychart.onDocumentReady(function () {
+      // The data used in this sample can be obtained from the CDN
+      // https://cdn.anychart.com/samples/gantt-charts/activity-oriented-chart/data.js
+      anychart.data.loadJsonFile(
+        [],
+        function (data) {
+		var data = masterData;
 
 // set the input date/time format
 anychart.format.inputDateTimeFormat("yyyy-MM-dd");
