@@ -47,7 +47,7 @@ function myFunction() {
     <script>
         var data = []
 
-        window.addEventListener("message", function (event) {
+        document.addEventListener("message", function (event) {
             data = JSON.parse(event.data)
             window.ReactNativeWebView.postMessage(event.data)
             // data = [
