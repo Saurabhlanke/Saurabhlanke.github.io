@@ -43,12 +43,17 @@ function myFunction() {
 </style>
  
 <body>
-  <h1>gantt chart 01</h1>
-    <div id="container"></div>
-    <script>
-    document.addEventListener("message", function(event) {
- alert(event.data)
-}
+  document.addEventListener("message", function(data) {
+                       //alert(data.data)
+	   if (window.ReactNativeWebView) {
+        let message = {
+          action: "23",
+          message: "data sent",
+        };
+        window.ReactNativeWebView.postMessage(data.data);
+      }
+
+ });
     </script>
 </body>
 
