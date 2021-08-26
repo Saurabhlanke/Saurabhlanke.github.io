@@ -21,12 +21,13 @@
 </style>
 
 <body>
-	<h1>helopkojo</h1>
+	<h1>Gantt chart</h1>
     <div id="container"></div>
     <script>
         var data = []
 
          document.addEventListener("message", function(event) {
+		 location.reload();
             data = JSON.parse(event.data)
              window.ReactNativeWebView.postMessage(event.data)
             // data = [
