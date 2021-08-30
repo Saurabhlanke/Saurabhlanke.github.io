@@ -26,7 +26,6 @@
         var data = []
 
          document.addEventListener("message", function(event) {
-		 location.reload();
             data = JSON.parse(event.data)
              window.ReactNativeWebView.postMessage(event.data)
             // data = [
@@ -53,7 +52,7 @@
             anychart.onDocumentReady(function () {
 
                 // set the output date/time format
-                anychart.format.outputDateTimeFormat("dd/MM/YYYY");
+                anychart.format.outputDateTimeFormat("dd/MM/yyyy");
 
                 var treeData = anychart.data.tree(data, "as-tree");
                 // create a chart
@@ -93,28 +92,63 @@
                 var column_2 = chart.dataGrid().column(1);
                 var column_3 = chart.dataGrid().column(3);
                 var column_4 = chart.dataGrid().column(4);
-
-                column_3.labels().fontColor("black");
+				var column_5 = chart.dataGrid().column(5);
+				var column_6 = chart.dataGrid().column(6);
+				var column_7 = chart.dataGrid().column(7);
+				
+				column_3.labels().fontColor("black");
                 column_3.labels().fontWeight(400);
                 column_3.labels().fontSize(15);
                 column_3.labels().format("{%linearIndex}.");
-                column_3.title().text("Start");
+                column_3.title().text("Resource");
                 column_3.title().fontColor('black');
                 column_3.title().fontWeight(900);
                 column_3.title().fontSize(15);
-                column_3.labels().format(
-                    "{%actualStart}"
-                );
-
-                column_4.labels().fontColor("black");
+                column_3.labels().format(getResource);
+				
+				column_4.labels().fontColor("black");
                 column_4.labels().fontWeight(400);
                 column_4.labels().fontSize(15);
                 column_4.labels().format("{%linearIndex}.");
-                column_4.title().text("End");
+                column_4.title().text("Duration");
                 column_4.title().fontColor('black');
                 column_4.title().fontWeight(900);
                 column_4.title().fontSize(15);
-                column_4.labels().format(
+                column_4.labels().format(getDuration);
+				
+				column_5.labels().fontColor("black");
+                column_5.labels().fontWeight(400);
+                column_5.labels().fontSize(15);
+                column_5.labels().format("{%linearIndex}.");
+                column_5.title().text("% Comp.");
+                column_5.title().fontColor('black');
+                column_5.title().fontWeight(900);
+                column_5.title().fontSize(15);
+                column_5.labels().format(getPercent);
+				
+				
+				
+				column_6.labels().fontColor("black");
+                column_6.labels().fontWeight(400);
+                column_6.labels().fontSize(15);
+                column_6.labels().format("{%linearIndex}.");
+                column_6.title().text("Start");
+                column_6.title().fontColor('black');
+                column_6.title().fontWeight(900);
+                column_6.title().fontSize(15);
+                column_6.labels().format(
+                    "{%actualStart}"
+                );
+
+                column_7.labels().fontColor("black");
+                column_7.labels().fontWeight(400);
+                column_7.labels().fontSize(15);
+                column_7.labels().format("{%linearIndex}.");
+                column_7.title().text("End");
+                column_7.title().fontColor('black');
+                column_7.title().fontWeight(900);
+                column_7.title().fontSize(15);
+                column_7.labels().format(
                     "{%actualEnd}"
                 );
 
@@ -178,6 +212,15 @@
             });
 
         })
+		function getResource(data) {
+      return data.item.get('resource');
+    }
+	 function getDuration(data) {
+      return data.item.get('duration');
+    }
+	function getPercent(data) {
+      return data.item.get('percentage');
+    }
 
     </script>
 </body>
